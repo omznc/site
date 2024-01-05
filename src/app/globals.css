@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#content {
+    align-items: start;
+}
+
+@media (min-width: 768px) {
+    #content {
+        align-items: safe center;
+    }
+}
+
+/* All text selections are black background, white text */
+::selection {
+    background: #000;
+    color: #fff;
+}
+
+/* Unless we have a dark classname */
+.dark ::selection {
+    background: #fff;
+    color: #000;
+}
+
+blockquote {
+    border-left: 4px solid #000;
+    padding-left: 1rem;
+    margin-left: 0;
+}
+
+.dark blockquote {
+    border-left: 4px solid #fff;
+}
+
+.gradient {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    mix-blend-mode: overlay;
+    opacity: 5%;
+    background-size: 100% 100%;
+    background: white;
+    background: linear-gradient(to bottom, #b92b27, #1565c0);
+    z-index: -99999;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .gradient {
+    background: black;
+    background: linear-gradient(to bottom, #b92b27, #c04315);
+    mix-blend-mode: darken;
+    opacity: 3%;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* on parent hover*/
+.gradientParent:hover .gradient {
+    animation: gradient 5s linear infinite;
+    opacity: 8%;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .gradientParent:hover .gradient {
+    opacity: 5%;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*everything should have 0.2s transition all*/
+* {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*except for window resizing*/
+html,
+body {
+    transition: none;
+}
