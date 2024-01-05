@@ -1,4 +1,8 @@
 # My personal website
+  
+![firefox_F0hlZRIQ93](https://github.com/omznc/site/assets/38432561/2342a23a-5cfc-4aea-8fee-396e1a53a75a)
+
+Accessible on [omarzunic.com](https://omarzunic.com)
 
 This was built with Next.js and deployed on Vercel.
 It uses Strapi as a CMS because I was lazy, and every UI element is custom made.
